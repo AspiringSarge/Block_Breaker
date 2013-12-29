@@ -1,4 +1,4 @@
 Block_Breaker
 =============
 
-A Processing game implementation
+A Processing game implementation.

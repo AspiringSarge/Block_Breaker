@@ -1,4 +1,8 @@
 Block_Breaker
 =============
 
-A Processing game implementation.
+A game using Processing.
+
+My first Game ever. My second project in Processing, and my First experience with using Git and GitHub.
+
+Hope you enjoy it!

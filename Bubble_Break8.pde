@@ -449,8 +449,8 @@ void simplebubble(int x, int y, int i)      //To describe what happens when each
   {
     bubhit[i]=true;
     justpop[i] = true;
-    popSound[i].cue(0);
-    popSound[i].play();
+    //popSound[i].cue(0);
+    //popSound[i].play();
     poptime[i]=millis();
     score += 100;
     if ((abs(atan2(y-RockY-10, x-RockX)) < (3*PI/4)) && (abs(atan2(y-RockY-10, x-RockX)) > (PI/4)))  //To bounce Rock off the bubble (he is surprisingly light!!!) fairly realistically
@@ -576,21 +576,21 @@ void common()
 
       steelpermit=true;
 
-      wallSound.cue(0);
-      wallSound.play();
+      //wallSound.cue(0);
+      //wallSound.play();
     }
     if (RockY<=10)             //If Rock hits the roof
     {
       velY = -velY;
 
-      wallSound.cue(0);
-      wallSound.play();
+      //wallSound.cue(0);
+      //wallSound.play();
     }
     if ((RockY) > (height-30) && ((RockX>= (mouseX-(width/10)))&&(RockX <= (mouseX+(width/10)))))  //If Rock hits Plat
     {
       if (isPlay && !startballvel) {
-        paddleSound.cue(0);
-        paddleSound.play();
+        //paddleSound.cue(0);
+        //paddleSound.play();
         score+=10;
       }
 
@@ -609,8 +609,8 @@ void common()
     if ((RockY>(height-5))  && ((RockX<= (mouseX-(width/10)))||(RockX >= (mouseX+(width/10)))) )  //If Plat misses Rock
     {
       reset();
-      ballfallSound.cue(0);
-      ballfallSound.play();
+      //ballfallSound.cue(0);
+      //ballfallSound.play();
       score -= 250;
     }
     RockX += velX;
@@ -651,15 +651,15 @@ void wallrender()   //To deal with the steel wall
         if (!steelpass) //If Rock has just passed through the wall
         {
           steelpass=true;
-          steelthroughSound.cue(0);
-          steelthroughSound.play();
+          //steelthroughSound.cue(0);
+          //steelthroughSound.play();
         }
       }
       else      
       { 
         score-=20;
-        steelSound.cue(0);
-        steelSound.play();
+        //steelSound.cue(0);
+        //steelSound.play();
         velY = -velY;
       }
     }
@@ -696,8 +696,8 @@ void steelhit(int x, int y)  //For deciding collision of Rock with the stel ball
   imageMode(CENTER);
   if (dist(x, y, RockX, RockY-10)<SteelImage.width/2+10 && (millis()-lasthit)>150)
   {
-    steelSound.cue(0);
-    steelSound.play();
+    //steelSound.cue(0);
+    //steelSound.play();
     score -= 10;
     if ((abs(atan2(y-RockY-10, x-RockX)) < (3*PI/4)) && (abs(atan2(y-RockY-10, x-RockX)) > (PI/4)))
       velY = -velY;
